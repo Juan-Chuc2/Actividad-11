@@ -4,15 +4,21 @@ cant_user = int(input("Cuantos usuarios desesea ingresar: "))
 for i in range(cant_user):
     print(f"\n Propetiario #{i+1}")
     number_nit = int(input("Ingrese su numero de NIT: "))
+    while number_nit in propetarios:
+        print(f"El numero de nit {number_nit} ya existe")
+        number_nit = int(input("Vuelva a ingresar su numero de NIT: "))
     complet_name = input("Ingrese su nombre completo porfavor: ")
     number_contact = int(input("Ingrese su número de telefono: "))
+    while number_contact in propetarios:
+        print(f"El numero de telefono {number_contact} ya existe, verifique porfavor")
+        number_contact = int(input("Vuelva a ingresar su número de telefono: "))
     cantidad_vehiculos = int(input("Ingrese la cantidad de vehiculos que posee: "))
     vehiculos = {}
     for j in range(cantidad_vehiculos):
-        print(f"\n Vehivulo {j+1}")
+        print(f"\n Vehiculo {j+1}")
         placa = input("Ingrese el numero de placa: ")
         marca = input("Ingrese la marca de su vehiculo: ")
-        modelo = int(input("Ingrese el modelo de su vehiculo (ej: corrolla): "))
+        modelo = input("Ingrese el modelo de su vehiculo (ej: corrolla): ")
         anio = int(input("Ingrese el año de su vehiculo: "))
         estado_impuesto = input("Ingrese si a pagado su impuesto (si/no): ")
         vehiculos[placa] = {
@@ -25,13 +31,14 @@ for i in range(cant_user):
         "Nombre": complet_name,
         "Telefono":number_contact,
         "Cantidad de vehiculos": cantidad_vehiculos,
+        "Vehiculos": vehiculos,
     }
 for number_nit,datos in propetarios.items():
     print(f"\n Numero de NIT: {number_nit}")
     print(f"Nombre: {datos['Nombre']}")
     print(f"Telefono: {datos['Telefono']}")
     print(f"Cantidad de vehiculos: {datos['Cantidad de vehiculos']}")
-    for placa, carr in vehiculos.items():
+    for placa, carr in datos['Vehiculos'].items():
         print(f"\n Numero de placa{placa} ")
         print(f"Marca: {carr['Marca']}")
         print(f" Modelo: {carr['Modelo']}")
