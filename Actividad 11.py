@@ -26,3 +26,14 @@ for i in range(cant_user):
         "Telefono":number_contact,
         "Cantidad de vehiculos": cantidad_vehiculos,
     }
+for number_nit,datos in propetarios.items():
+    print(f"\n Numero de NIT: {number_nit}")
+    print(f"Nombre: {datos['Nombre']}")
+    print(f"Telefono: {datos['Telefono']}")
+    print(f"Cantidad de vehiculos: {datos['Cantidad de vehiculos']}")
+    for placa, carr in vehiculos.items():
+        print(f"\n Numero de placa{placa} ")
+        print(f"Marca: {carr['Marca']}")
+        print(f" Modelo: {carr['Modelo']}")
+        print(f" Año: {carr['Año']}")
+        print(f" Estado de su impuesto: {carr['Impuesto']}")
