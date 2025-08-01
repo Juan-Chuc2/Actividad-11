@@ -90,7 +90,7 @@ for datos in propetarios.values():
             pagaron += 1
         else:
             no_pagaron += 1
-
+print("")
 print("\n Cantidad de impuestos:")
 print(f"Vehículos que pagaron impuesto: {pagaron}")
 print(f"Vehículos que NO pagaron impuesto: {no_pagaron}")
