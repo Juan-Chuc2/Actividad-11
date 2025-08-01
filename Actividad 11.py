@@ -67,8 +67,6 @@ if propetarios:
     print("\n busqueda por identificacion")
     search_identification = int(input("Ingrese el numnero de identificacion  que desea buscar: "))
     if search_identification in propetarios:
-
-       # print(f"\n NIT: {propetarios[search_identification]['number_nit']}")
         print(f"\n Se encontro el numero de identificacion {search_identification}")
         print(f"Nombre: {propetarios[search_identification]['Nombre']}")
         print(f"Telefono: {propetarios[search_identification]['Telefono']}")
