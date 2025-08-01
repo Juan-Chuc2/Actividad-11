@@ -77,3 +77,7 @@ if propetarios:
         print(f"Modelo: {datos_vehiculo['Modelo']}")
         print(f"Año del vehiculo: {datos_vehiculo['Año']}")
         print(f"Impuesto: {datos_vehiculo['Impuesto']}")
+    else:
+        print("No se encontro ningun propietario con ese numero de identificacion")
+else:
+    print("Diciconario vacio")
