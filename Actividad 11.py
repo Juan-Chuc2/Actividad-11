@@ -81,3 +81,16 @@ if propetarios:
         print("No se encontro ningun propietario con ese numero de identificacion")
 else:
     print("Diciconario vacio")
+pagaron = 0
+no_pagaron = 0
+
+for datos in propetarios.values():
+    for vehiculo in datos["Vehiculos"].values():
+        if vehiculo["Impuesto"].lower() == "si":
+            pagaron += 1
+        else:
+            no_pagaron += 1
+
+print("\n Cantidad de impuestos:")
+print(f"Vehículos que pagaron impuesto: {pagaron}")
+print(f"Vehículos que NO pagaron impuesto: {no_pagaron}")
