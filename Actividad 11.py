@@ -57,9 +57,25 @@ for number_nit,datos in propetarios.items():
     print(f"Telefono: {datos['Telefono']}")
     print(f"Cantidad de vehiculos: {datos['Cantidad de vehiculos']}")
     for placa, carr in datos['Vehiculos'].items():
-        print(f"\n Numero de placa{placa} ")
+        print(f"\n Numero de placa {placa} ")
         print(f"Marca: {carr['Marca']}")
         print(f" Modelo: {carr['Modelo']}")
         print(f" Año: {carr['Año']}")
         print(f" Estado de su impuesto: {carr['Impuesto']}")
 
+if propetarios:
+    print("\n busqueda por identificacion")
+    search_identification = int(input("Ingrese el numnero de identificacion  que desea buscar: "))
+    if search_identification in propetarios:
+
+       # print(f"\n NIT: {propetarios[search_identification]['number_nit']}")
+        print(f"\n Se encontro el numero de identificacion {search_identification}")
+        print(f"Nombre: {propetarios[search_identification]['Nombre']}")
+        print(f"Telefono: {propetarios[search_identification]['Telefono']}")
+        print(f"Vehiculos que posee: {propetarios[search_identification]['Cantidad de vehiculos']}")
+    for placa, datos_vehiculo in propetarios[search_identification]['Vehiculos'].items():
+        print(f"\nNumero de placa: {placa}")
+        print(f"Marca: {datos_vehiculo['Marca']}")
+        print(f"Modelo: {datos_vehiculo['Modelo']}")
+        print(f"Año del vehiculo: {datos_vehiculo['Año']}")
+        print(f"Impuesto: {datos_vehiculo['Impuesto']}")
