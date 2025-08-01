@@ -8,10 +8,16 @@ for i in range(cant_user):
         print(f"El numero de nit {number_nit} ya existe")
         number_nit = int(input("Vuelva a ingresar su numero de NIT: "))
     complet_name = input("Ingrese su nombre completo porfavor: ")
-    number_contact = int(input("Ingrese su número de telefono: "))
-    while number_contact in propetarios:
-        print(f"El numero de telefono {number_contact} ya existe, verifique porfavor")
-        number_contact = int(input("Vuelva a ingresar su número de telefono: "))
+    while True:
+        number_contact = int(input("Ingrese su número de teléfono: "))
+        encontrado = False
+        for datos in propetarios.values():
+            if "Telefono" in datos and datos["Telefono"] == number_contact:
+                print(f"El númerode telefono  {number_contact} ya fue registrado.")
+                encontrado = True
+                break
+        if not encontrado:
+            break
     cantidad_vehiculos = int(input("Ingrese la cantidad de vehiculos que posee: "))
     vehiculos = {}
     for j in range(cantidad_vehiculos):
