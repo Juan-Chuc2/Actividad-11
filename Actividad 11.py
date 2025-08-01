@@ -22,7 +22,19 @@ for i in range(cant_user):
     vehiculos = {}
     for j in range(cantidad_vehiculos):
         print(f"\n Vehiculo {j+1}")
-        placa = input("Ingrese el numero de placa: ")
+        while True:
+            placa = input("Ingrese el número de placa: ")
+            repetida = False
+            for datos in propetarios.values():
+                for placa_existente in datos["Vehiculos"]:
+                    if placa_existente == placa:
+                        print(f"El numero de placa {placa} ya fue registrado.")
+                        repetida = True
+                        break
+                if repetida:
+                    break
+            if not repetida:
+                break
         marca = input("Ingrese la marca de su vehiculo: ")
         modelo = input("Ingrese el modelo de su vehiculo (ej: corrolla): ")
         anio = int(input("Ingrese el año de su vehiculo: "))
@@ -50,3 +62,4 @@ for number_nit,datos in propetarios.items():
         print(f" Modelo: {carr['Modelo']}")
         print(f" Año: {carr['Año']}")
         print(f" Estado de su impuesto: {carr['Impuesto']}")
+
